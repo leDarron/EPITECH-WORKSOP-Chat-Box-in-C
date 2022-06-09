@@ -29,16 +29,12 @@ SERVER_NAME	=	server
 CLIENT_NAME	=	client
 
 all: server client
-		@echo "\033[34mCompilation successful."
-		@echo "\033[32m$(SERVER_NAME) binary and $(CLIENT_NAME) binary created.\033[0m"
 
 server:
-		@echo "\033[34mCompiling $(SERVER_NAME)...\033[0m"
 		$(MAKE) $(OBJ_SERVER)
 		gcc -o $(SERVER_NAME) $(OBJ_SERVER)
 
 client:
-		@echo "\n\033[34mCompiling $(CLIENT_NAME)...\033[0m"
 		$(MAKE) $(OBJ_CLIENT)
 		gcc -o $(CLIENT_NAME) $(OBJ_CLIENT)
 
