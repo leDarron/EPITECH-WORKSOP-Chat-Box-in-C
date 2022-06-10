@@ -20,7 +20,7 @@ server_t *init_server(char *ip_addr, int port)
     addr_server.sin_port = htons(port);
     addr_server.sin_addr.s_addr = inet_addr(ip_addr);
     bind(server->socket, (const struct sockaddr*) &addr_server, sizeof(addr_server));
-    listen(server->socket, 10);
+    listen(server->socket, FD_SETSIZE);
 
     return server;
 }
